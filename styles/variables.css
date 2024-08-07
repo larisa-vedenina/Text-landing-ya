@@ -1,0 +1,13 @@
+:root {
+    --accent-color: #F54932;
+    --secondary-accent-color: #3057A2;
+    --bg-color: #FFFFFF;
+    --text-color: #313131;
+    --main-button-color: #1F1F1F;
+    --main-button-hover: #FBCE51;
+    --accent-font: "Merriweather", fantasy;
+    --main-font: "GolosText", sans-serif;
+    --wght-bold: 700;
+    --wght-regular: 400;
+    --maxWidthContainer: 1250px;
+  }
