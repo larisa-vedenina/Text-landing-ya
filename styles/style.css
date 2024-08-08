@@ -1,11 +1,15 @@
 .page {
   background-color: var(--bg-color);
   font-family: var(--main-font, sans-serif);
-  font-variation-settings: "wght" var(--wght-text, 400);
+  font-variation-settings: "wght" var(--wght-regular, 400);
   background-color: var(--bg-color);
   color: var(--text-color);
   margin: 0 auto;
   font-size: 20px;
+}
+.container {
+  max-width: 1222px;
+  margin: 0 auto;
 }
 
 .header {
@@ -13,31 +17,31 @@
 }
 
 .decoration-zone {
-    background: url(/images/bg.png) center/cover,
+  background: url(/images/bg.png) center/cover,
     url(/images/bg-img.png) center/cover, #e9ded4;
-    background-blend-mode: color-burn, normal, normal;
-    z-index: 0;
+  background-blend-mode: color-burn, normal, normal;
+  z-index: 0;
 }
 
 .decoration-zone::before {
-    content: "";
-    position: absolute;
-    background-image: url(/images/knight.png);
-    width: 200px;
-    height: 243px;
-    transform: rotate(-11deg);
-    right: 334px;
-    bottom: 0px;
+  content: "";
+  position: absolute;
+  background-image: url(/images/knight.png);
+  width: 200px;
+  height: 243px;
+  transform: rotate(-11deg);
+  inset-inline-end: 334px;
+  inset-block-end: 0px;
 }
 
 .decoration-zone::after {
-    content: "";
-    position: absolute;
-    background-image: url(/images/pawn.png);
-    width: 82px;
-    height: 122px;
-    right: 45px;
-    bottom: 20px;
+  content: "";
+  position: absolute;
+  background-image: url(/images/pawn.png);
+  width: 82px;
+  height: 122px;
+  inset-inline-end: 45px;
+  inset-block-end: 20px;
 }
 
 .header__logo {
@@ -46,7 +50,6 @@
   align-items: flex-end;
   gap: 6px;
   padding-block: 25px;
-  padding-inline-start: 72px;
 }
 
 .header__logo-text {
@@ -59,22 +62,27 @@
 }
 
 .cover {
-  padding: 37px 752px 132px 72px;
+  width: clamp(20.9375rem, 16.9796rem + 19.7897vw, 33.875rem);
+  padding-block: 37px 132px;
+}
+
+.title {
+  font-family: var(--accent-font, fantasy);
+  font-weight: var(--wght-regular, 400);
+  text-transform: uppercase;
+  color: var(--text-color);
 }
 
 .cover__title {
   display: flex;
   flex-direction: column;
-  font-family: var(--accent-font, fantasy);
-  font-weight: var(--wght-regular, 400);
-  font-size: 60px;
+  font-size: clamp(2.25rem, 1.7911rem + 2.2945vw, 3.75rem);
   line-height: 110%;
-  text-transform: uppercase;
-  color: var(--text-color);
   padding-block-end: 24px;
 }
 
 .cover__text-top {
+  align-self: flex-start;
 }
 
 .cover__text-center {
@@ -109,7 +117,6 @@
 
 .main-button {
   background-color: var(--main-button-color);
-  
 }
 
 .transparent-button {
@@ -130,5 +137,193 @@
 }
 
 .transparent-button__text {
-    color: var(--main-button-color)
+  color: var(--main-button-color);
 }
+
+/* ------------------------------------ main section 1------------------------------------ */
+
+.tournament-description__lecture {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  grid-template-rows: min-content;
+  align-items: center;
+  gap: 64px;
+  padding-block: 72px 74px;
+}
+
+.tournament-description__title {
+  font-size: 36px;
+  line-height: 135%;
+}
+
+.accent-title {
+  font-weight: var(--wght-bold, 700);
+  color: var(--accent-color);
+}
+
+.tournament-description__session {
+  position: relative;
+  display: grid;
+  grid-template-columns: min-content 55%;
+  grid-template-rows: min-content;
+  gap: 15px;
+  padding-block-end: 210px;
+}
+
+.session__image {
+  position: relative;
+  margin-left: -25px;
+}
+
+.session__image-main {
+  position: relative;
+}
+
+.session__image-overlay {
+  position: absolute;
+  mix-blend-mode: color-burn;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.session__title {
+  padding-block-end: 60px;
+}
+
+.text-block__table {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 306px minmax(398px, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  padding-block-end: 48px;
+  font-family: var(--main-font, sans-serif);
+  font-size: 20px;
+  line-height: 120%;
+}
+
+tbody,
+tr {
+  display: contents;
+}
+
+td {
+  padding-block: 16px;
+  border-bottom: 2px solid rgb(208 208 208);
+}
+
+.table-column-right {
+  border-right: 2px solid rgb(208 208 208);
+  color: var(--text-color);
+  opacity: 0.7;
+  font-weight: var(--wght-regular, 400);
+}
+
+.table-column-left {
+  font-weight: var(--wght-bold, 600);
+  padding-inline-start: 16px;
+}
+
+.postscriptum {
+  font-family: var(--main-font, sans-serif);
+  font-weight: var(--wght-regular, 400);
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--secondary-accent-color);
+}
+
+/* ------------------------------------ section 2 ------------------------------------ */
+
+.stages__heading {
+}
+
+.stages__title {
+  width: 806px;
+  height: fit-content;
+  font-size: 54px;
+  line-height: 120%;
+}
+
+.stages__title-postscriptum {
+  position: relative;
+  inset-block-start: -57px;
+  inset-inline-start: 301px;
+  width: 280px;
+}
+
+/* ------------------------------------ грид сетка начало ------------------------------------ */
+
+.stages__elements {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 112px 112px 136px;
+  gap: 20px;
+  grid-template-areas:
+    "thoroughfare hotels farm"
+    "palace garage farm"
+    "radiostation airport airport";
+  
+  list-style-type: none;
+}
+
+.elements__item {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(/images/overlay-stages-section-3.png), url(/images/bg-stages-section-3.png);
+  background-blend-mode: color-burn, normal;
+  padding-block-start: 20px;
+  padding-inline: 72px 20px;
+}
+
+.thoroughfare {
+  grid-area: thoroughfare;
+  position: relative;
+}
+
+.thoroughfare::before {
+  content: "1";
+  position: absolute;
+  display: flex;
+  inline-size: 36px;
+  block-size: 36px;
+  border-radius: 60px;
+  background-color: var(--bg-color);
+  inset-inline-start: 20px;
+  inset-block-start: 20px;
+  
+}
+
+.hotels {
+  grid-area: hotels;
+}
+
+.farm {
+  grid-area: farm;
+}
+
+.palace {
+  grid-area: palace;
+}
+
+.garage {
+  grid-area: garage;
+}
+
+.radiostation {
+  grid-area: radiostation;
+}
+
+.airport {
+  grid-area: airport;
+  padding-inline-end: 325px;
+}
+
+.stages__image {
+  position: relative;
+  inset-inline-start: 884px;
+  inset-block-end: 200px;
+}
+/* ------------------------------------ грид сетка конец ------------------------------------ */
+

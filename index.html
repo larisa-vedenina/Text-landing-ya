@@ -12,7 +12,8 @@
   </head>
   <body class="page">
     <header class="header decoration-zone">
-      <div class="header__logo">
+      <div class="container">
+        <div class="header__logo">
         <a class="header__logo-svg">
           <img class="logo" src="./svg/logo.svg" alt="логотип проекта" />
         </a>
@@ -20,28 +21,81 @@
           >Клуб <br />
           четырех коней</span
         >
-      </div>
-      <div class="cover">
-        <h1 class="cover__title">
-          <span class="cover__text-top">превратите уездный город</span>
-          <span class="cover__text-center">в столицу</span>
-          <span class="cover__text-bottom">земного шара</span>
-        </h1>
-        <h2 class="cover__subheading">Оплатите взнос на телеграммы для организации международного васюкинского турнира по шахматам</h2>
-        <div class="cover__buttons">
+        </div>
+        <div class="cover">
+          <h1 class="cover__title title">
+            <span class="cover__text-top">превратите уездный город</span>
+            <span class="cover__text-center">в столицу</span>
+            <span class="cover__text-bottom">земного шара</span>
+          </h1>
+          <h2 class="cover__subheading">Оплатите взнос на телеграммы для организации международного васюкинского турнира по шахматам</h2>
+          <div class="cover__buttons">
             <button class="main-button button" type="button">
                 <span class="button__text main-button__text">Поддержать шахматную мысль</span>
             </button>
             <button class="transparent-button button" type="button">
                 <span class="button__text transparent-button__text">Подробнее о турнире</button>
-        </div>
-    </div>
+          </div>
+        </div>  
+      </div>
 </header>
-    <main>
-      <section></section>
-      <section></section>
-      <section></section>
-      <section></section>
+    <main class="container">
+      <section class="content__tournament-description">
+        <div class="tournament-description__lecture">
+          <h3 class="tournament-description__title title">чтобы поддержать Международный васюкинский турнир посетите лекцию на тему: <span class="accent-title"> «Плодотворная дебютная идея»</span></h3>
+          <img class="lecture__image" src="./images/img-2-section.png" alt="chess players"/>
+        </div>
+        <div class="tournament-description__session">
+          <div class="session__image">
+            <img class="session__image-main" src="./images/img-2-section-2.png" alt="chess player"/>
+            <img class="session__image-overlay" src="./images/img-2-section-2-over.png" alt="overlay"/>
+          </div>
+          <div class="session__text-block">
+            <h3 class="session__title tournament-description__title title">и сеанс <span class="accent-title">одновременной игры в шахматы на 160 досках</span> гроссмейстера О. Бендера</h3>
+            <table class="text-block__table">
+              <tbody>
+                <tr>
+                  <td class="table-column-right">Место проведения:</td>
+                  <td class="table-column-left">Клуб «Картонажник»</td>
+                </tr>
+                <tr>
+                  <td class="table-column-right">Дата и время мероприятия:</td>
+                  <td class="table-column-left">22 июня 1927 г. в 18:00</td>
+                </tr>
+                <tr>
+                  <td class="table-column-right">Стоимость входных билетов:</td>
+                  <td class="table-column-left">20 коп.</td>
+                </tr>
+                <tr>
+                  <td class="table-column-right">Плата за игру:</td>
+                  <td class="table-column-left">50 коп.</td>
+                </tr>
+                <tr>
+                  <td class="table-column-right">Взнос на телеграммы:</td>
+                  <td class="table-column-left"><span>100 руб.</span> 21 руб. 16 коп.</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="postscriptum text-block__postscriptum">По всем вопросам обращаться в администрацию к К. Михельсону</p>
+        </div>
+        </div>
+      </section>
+      <section class="content__stages">
+        <div class="stages__heading">
+          <h2 class="stages__title title">Этапы преображения Васюков</h2>
+          <p class="postscriptum stages__title-postscriptum">Будущие источники обогащения васюкинцев</p>
+        </div>
+        <ul class="stages__elements">
+          <li class="elements__item thoroughfare">Строительство железнодорожной магистрали Москва-Васюки</li>
+          <li class="elements__item hotels">Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов</li>
+          <li class="elements__item farm">Поднятие сельского хозяйства в радиусе <br/> на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет</li>
+          <li class="elements__item palace">Строительство дворца <br/> для турнира</li>
+          <li class="elements__item garage">Размещение гаражей для гостевого автотранспорта</li>
+          <li class="elements__item radiostation">Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов</li>
+          <li class="elements__item airport">Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн</li>
+        </ul>
+        <img class="stages__image" src="./images/img-3-section.png" alt="airplane"/>
+      </section>
     </main>
     <footer></footer>
   </body>
