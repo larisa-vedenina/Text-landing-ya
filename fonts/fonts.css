@@ -1,14 +1,28 @@
 @font-face {
-    font-family: GolosText;
-    src: local("GolosText"),
-      url(/fonts/GolosText-VariableFont_wght.woff2) format("woff2 supports variations"),
-      url(/fonts/GolosText-VariableFont_wght.woff2) format("woff2-variations");
+    font-family: "GolosText-VariableFont";
+    src: local("GolosText-VariableFont"),
+      url(./GolosText-VariableFont_wght.woff2) format("woff2 supports variations"),
+        url(./GolosText-VariableFont_wght.woff2) format("woff2-variations");
     font-display: swap;
     font-weight: 400 700;
   }
   
   @font-face {
-    font-family: Merriweather;
+    font-family: "GolosText";
+    src: local("GolosText"),
+      url(./GolosText-Regular.woff2) format("woff2");
+      font-weight: 400;
+  }
+
+  @font-face {
+    font-family: "GolosText";
+    src: local("GolosText"),
+      url(./GolosText-SemiBold.woff2) format("woff2");
+      font-weight: 600;
+  }
+
+  @font-face {
+    font-family: "Merriweather";
     src: local("Merriweather"),
       url(/fonts/Merriweather-Regular.woff2) format("woff2");
     font-display: swap;
@@ -16,7 +30,7 @@
   }
   
   @font-face {
-    font-family: Merriweather;
+    font-family: "Merriweather";
     src: local("Merriweather"),
       url(/fonts/Merriweather-Bold.woff2) format("woff2");
     font-display: swap;
