@@ -1,5 +1,4 @@
 .page {
-  inline-size: 100vw;
   background-color: var(--bg-color);
   font-family: var(--main-font, sans-serif);
   font-weight: var(--wght-regular, 400);
@@ -12,15 +11,16 @@
 
 @supports (font-variation-settings: normal) {
   page {
-      font-family: "GolosText-VariableFont", sans-serif;
+    font-family: "GolosText-VariableFont", sans-serif;
   }
-} 
-
-.container {
-  position: relative;
-  max-width: 1222px;
-  margin: 0 auto;
 }
+
+ .container {
+  position: relative;
+  max-width: 1222px; 
+  margin: 0 auto;
+  margin-inline: 72px; 
+} 
 
 .button {
   cursor: pointer;
@@ -34,7 +34,7 @@
 }
 
 .button:focus-visible {
-  border: 3px solid #FBCE51;
+  border: 3px solid #fbce51;
 }
 
 .title {
@@ -57,12 +57,16 @@
 }
 
 .decoration-zone {
+  width: 100vw;
   position: relative;
-  background: url(/images/bg.png) center/cover,
-    url(/images/bg-img.png) center/cover, var(--secondary-bg-color);
-  background-blend-mode: color-burn, normal, normal;
+   background: url(/images/bg.png) no-repeat,
+    url(/images/bg-img.png) no-repeat, var(--secondary-bg-color);
+  background-blend-mode: color-burn, normal, normal; 
+  background-size: cover;
+  background-position: top top;
+
 }
-  /* конь */
+/* конь */
 .decoration-zone::before {
   content: "";
   position: absolute;
@@ -75,7 +79,7 @@
   z-index: 2;
 }
 
-  /* пешка */
+/* пешка */
 .decoration-zone::after {
   content: "";
   position: absolute;
@@ -87,7 +91,7 @@
 }
 
 .header__content-container {
-  padding-block: 26px 132px;
+ padding-block: 26px 132px; 
 }
 
 /* ------------------------------------ шапка ------------------------------------ */
@@ -95,16 +99,18 @@
 .header__logo {
   display: flex;
   justify-content: flex-start;
-  align-items: flex-end;
   gap: 6px;
   padding-block-end: 62px;
+}
+
+.logo {
+  width: clamp(4.9375rem, 4.63rem + 1.3118vw, 5.75rem);;
 }
 
 .header__logo-text {
   font-family: var(--main-font, sans-serif);
   font-weight: var(--wght-bold, 700);
-  font-size: 16px;
-  line-height: 108%;
+  font-size: clamp(0.875rem, 0.8277rem + 0.2018vw, 1rem);  line-height: 108%;
   text-transform: uppercase;
   color: #595653;
 }
@@ -113,14 +119,16 @@
 /* ------------------------------------  текстовый блок главного экрана ------------------------------------ */
 
 .header__cover {
-  width: clamp(20.9375rem, 16.9796rem + 19.7897vw, 33.875rem);
+  inline-size: 542px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
 
 .cover__title {
   display: flex;
   flex-direction: column;
-  font-size: clamp(2.25rem, 1.6824rem + 2.4218vw, 3.75rem);
-  line-height: 110%;
+  font-size: clamp(2.25rem, 1.6824rem + 2.4218vw, 3.75rem);  line-height: 110%;
   padding-block-end: 24px;
 }
 
@@ -137,8 +145,7 @@
 }
 
 .cover__subheading {
-  font-size: 18px;
-  line-height: 130%;
+  font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);  line-height: 130%;
   text-align: center;
   padding-block-end: 40px;
 }
@@ -153,8 +160,8 @@
 
 .cover__button {
   border-radius: 66px;
-  block-size: clamp(2.9375rem, 2.3462rem + 2.5227vw, 4.5rem);
-  inline-size: clamp(20.9375rem, 22.6403rem + -7.2654vw, 16.4375rem);
+  block-size: 72px;
+  inline-size: 263px;
   padding: 0 49px;
   line-height: 130%;
   font-size: 16px;
@@ -168,7 +175,7 @@
 }
 
 .main-button:hover {
-  background-color: #FBCE51;
+  background-color: #fbce51;
   color: var(--main-button-color);
   border: 0;
   transform: scale(105%);
@@ -209,27 +216,25 @@
 }
 
 .ticker__in .ticker__text {
-  font-size: 22px;
-  line-height: 110%;
+  font-size: clamp(1rem, 0.8581rem + 0.6054vw, 1.375rem);  line-height: 110%;
   text-transform: uppercase;
   color: var(--bg-color);
-  padding-block: 18px;
+  padding-block: clamp(0.625rem, 0.4358rem + 0.8073vw, 1.125rem);
   white-space: nowrap;
   -webkit-backface-visibility: hidden;
 }
 
 @keyframes ticker {
-  0%{
+  0% {
     transform: translate(0, 0);
   }
-  
-  100%{
+
+  100% {
     transform: translate(-50%, 0);
   }
 }
 /* ===================================== контент - бегущая строка ===================================== */
 /* ===================================== главный экран ===================================== */
-
 
 /* ------------------------------------ контент - 1 блок - описание турнира ------------------------------------ */
 
@@ -328,10 +333,10 @@ td {
 
 .postscriptum {
   color: var(--secondary-accent-color);
+  font-size: clamp(1.125rem, 1.0777rem + 0.2018vw, 1.25rem);
 }
 
 /* ===================================== контент - 1 блок - описание турнира ===================================== */
-
 
 /* ------------------------------------ контент - 2 блок - этапы ------------------------------------ */
 
@@ -347,7 +352,7 @@ td {
 .stages__title {
   width: clamp(20.9375rem, 9.7982rem + 47.5277vw, 50.375rem);
   height: fit-content;
-  font-size: clamp(2.25rem, 1.8243rem + 1.8163vw, 3.375rem);;  
+  font-size: clamp(2.25rem, 1.8243rem + 1.8163vw, 3.375rem);
   line-height: 120%;
 }
 
@@ -355,7 +360,7 @@ td {
   position: absolute;
   inset-block-start: 72px;
   inset-inline-start: 301px;
-  width: 15.5em;
+  width: 280px;
 }
 
 /* ------------------------------------ таблица 2 блока ------------------------------------ */
@@ -377,7 +382,8 @@ td {
   position: relative;
   width: 100%;
   height: 100%;
-  background: url(/images/overlay-stages-section-3.png), url(/images/bg-stages-section-3.png);
+  background: url(/images/overlay-stages-section-3.png),
+    url(/images/bg-stages-section-3.png);
   background-blend-mode: color-burn, normal;
   padding-block-start: 20px;
   padding-inline: 72px 20px;
@@ -391,8 +397,9 @@ td {
 .thoroughfare::before {
   content: "";
   position: absolute;
-  inline-size: 1.8em;
-  block-size: 1.8em;
+  inline-size: 36px;
+  block-size: 36px;
+  align-content: center;
   background-image: url(../svg/number1.svg);
   inset-inline-start: 20px;
   inset-block-start: 20px;
@@ -405,8 +412,9 @@ td {
 .hotels::before {
   content: "";
   position: absolute;
-  inline-size: 1.8em;
-  block-size: 1.8em;
+  inline-size: 36px;
+  block-size: 36px;
+  align-content: center;
   background-image: url(../svg/number2.svg);
   inset-inline-start: 20px;
   inset-block-start: 20px;
@@ -419,8 +427,9 @@ td {
 .farm::before {
   content: "";
   position: absolute;
-  inline-size: 1.8em;
-  block-size: 1.8em;
+  inline-size: 36px;
+  block-size: 36px;
+  align-content: center;
   background-image: url(../svg/number3.svg);
   inset-inline-start: 20px;
   inset-block-start: 20px;
@@ -433,8 +442,9 @@ td {
 .palace::before {
   content: "";
   position: absolute;
-  inline-size: 1.8em;
-  block-size: 1.8em;
+  inline-size: 36px;
+  block-size: 36px;
+  align-content: center;
   background-image: url(../svg/number4.svg);
   inset-inline-start: 20px;
   inset-block-start: 20px;
@@ -447,8 +457,9 @@ td {
 .garage::before {
   content: "";
   position: absolute;
-  inline-size: 1.8em;
-  block-size: 1.8em;
+  inline-size: 36px;
+  block-size: 36px;
+  align-content: center;
   background-image: url(../svg/number5.svg);
   inset-inline-start: 20px;
   inset-block-start: 20px;
@@ -461,8 +472,9 @@ td {
 .radiostation::before {
   content: "";
   position: absolute;
-  inline-size: 1.8em;
-  block-size: 1.8em;
+  inline-size: 36px;
+  block-size: 36px;
+  align-content: center;
   background-image: url(../svg/number6.svg);
   inset-inline-start: 20px;
   inset-block-start: 20px;
@@ -476,8 +488,9 @@ td {
 .airport::before {
   content: "";
   position: absolute;
-  inline-size: 1.8em;
-  block-size: 1.8em;
+  inline-size: 36px;
+  block-size: 36px;
+  align-content: center;
   background-image: url(../svg/number7.svg);
   inset-inline-start: 20px;
   inset-block-start: 20px;
@@ -495,15 +508,16 @@ td {
 /* ------------------------------------ контент - 3 блок - участники ------------------------------------ */
 
 .main__participants {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 60px;
-  margin-block-end: 140px;
+  margin-block-end: 135px;
 }
 
-.participants__heading { 
+.participants__heading {
   display: flex;
   align-items: center;
   width: 100%;
@@ -511,7 +525,7 @@ td {
 }
 
 .participants__heading-title {
-  font-size: clamp(2.25rem, 1.8243rem + 1.8163vw, 3.375rem);;  
+  font-size: clamp(2.25rem, 1.8243rem + 1.8163vw, 3.375rem);
   line-height: 120%;
 }
 
@@ -528,21 +542,25 @@ td {
   background: no-repeat center url(../svg/svg.svg);
   width: 2.2em;
   height: 2.2em;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   cursor: pointer;
   border: 0;
+  outline: 0;
   background-color: var(--text-color);
   border-radius: 50%;
-  transition: background-color 0.2s, transform 0.2s ease-in;
+  transition: background-color 0.3s, transform 0.3s ease-in;
 }
 
 .button-arrow:disabled {
-  background-color: #D6D6D6;
+  background-color: #d6d6d6;
 }
 
 .button-arrow:hover {
-  background-color: #FBCE51;
+  background-color: #fbce51;
   transform: scale(105%);
-  transition: background-color 0.5s, transform 0.5s ease-in;
+  transition: background-color 0.5s, transform 0.3s ease-in;
 }
 
 .button-arrow-right {
@@ -551,28 +569,24 @@ td {
 /* ===================================== кнопки слайдера - 3 блок ===================================== */
 /* ------------------------------------ слайдер - 3 блок ------------------------------------ */
 
-.participants__slider {
-  position: relative;
-  overflow: hidden;
-  width: 1222px;
-  height: 462px;
+.participants__carousel {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  width: 100%;
 }
 
-.participants__slider-list {
-  position: absolute;
+.participants__carousel::-webkit-scrollbar {
+  height: 0;
+}
+
+.participants__carousel-content {
   display: grid;
-  grid-template-columns: repeat(6, min-content);
-  grid-template-rows: 1fr;
+  grid-gap: 20px;
   grid-auto-flow: column;
-  justify-items: center;
-  gap: 20px;
-  right: -17.5%;
-  transform: translateX(50%);
-  transition: all ease-in-out .3s;
-  list-style-type: none;
 }
 
-.list-item {
+.carousel-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -580,12 +594,12 @@ td {
   width: 100%;
 }
 
-.participants__list__avatar {
+.carousel-item__avatar {
   padding-block-end: 31px;
   background-size: contain;
 }
 
-.participants__list__about {
+.carousel-item__about {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -593,16 +607,16 @@ td {
   padding-block-end: 20px;
 }
 
-.list__about-name {
+.about-name {
   font-weight: var(--wght-bold, 600);
   font-size: 24px;
 }
 
-.list__about-status {
+.about-status {
   opacity: 0.6;
 }
 
-.participants__button-more {
+.carousel__button-more {
   border: 1px solid var(--secondary-accent-color);
   border-radius: 62px;
   padding: 12px;
@@ -611,16 +625,17 @@ td {
   background-color: transparent;
   color: var(--secondary-accent-color);
   font-size: 16px;
-  line-height: 120%;  
+  line-height: 120%;
   text-transform: capitalize;
-  transition: background-color 0.2s, transform 0.2s ease-in;
+  transition: background-color 0.3s, transform 0.3s ease-in;
+  margin-block-end: 5px;
 }
 
-.participants__button-more:hover {
+.carousel__button-more:hover {
   background-color: var(--secondary-accent-color);
   color: var(--bg-color);
   transform: scale(105%);
-  transition: background-color 0.5s, transform 0.5s ease-in;
+  transition: background-color 0.5s, transform 0.2s ease-in;
 }
 
 /* ===================================== слайдер - 3 блок ===================================== */
@@ -645,8 +660,189 @@ td {
 /* ===================================== футер ===================================== */
 
 
+
+  
 @media (width <= 375px) {
+
+/* ------------------------------------ главный экран ------------------------------------ */
+
   .container {
-    padding: 18px 19px;
+    min-width: 335px;
+    margin-inline: 20px;
   }
+
+  .header {
+    margin-block-end: 43px;
+  }
+
+  .header__content-container {
+  padding-block: 18px 291px; 
+  }
+
+  .header__cover {
+    inline-size: 335px;
+  }
+  
+  .cover__subheading {
+    text-align: start;
+    padding-block-end: 32px;
+  }
+
+  .cover__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .transparent-button {
+    background-color: rgb(255 255 255 / 0.9);
+    border: 0;
+  }
+
+  .cover__button {
+    block-size: 47px;
+    inline-size: 335px;
+    padding: 0 18px;
+  }
+
+
+/* ===================================== главный экран ===================================== */
+
+/* ------------------------------------ контент - 1 блок - описание турнира ------------------------------------ */
+
+.main__tournament-description {
+  gap: 34px;
+  margin-block-end: 120px;
+}
+
+.tournament-description__lecture {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  grid-template-columns: 335px;
+  align-items: center;
+  gap: 24px;
+}
+
+.lecture__image {
+  width: 100%;
+}
+
+.tournament-description__session {
+  grid-template-rows: repeat(2, min-content);
+  grid-template-columns: 335px;
+}
+
+.session__image-main {
+  width: 100%;
+}
+
+.content-block__table {
+  grid-template-columns: 335px;
+  grid-template-rows: repeat(10, min-content);
+  padding-block-end: 40px;
+}
+
+td {
+  padding-block: 0;
+}
+
+.table-column-right {
+  border: 0;
+  padding-block-start: 16px;
+}
+
+.table-column-left {
+  padding-inline-start: 0px;
+  padding-block: 12px 16px;
+}
+
+/* ===================================== контент - 1 блок - описание турнира ===================================== */
+
+/* ------------------------------------ контент - 2 блок - этапы ------------------------------------ */
+
+.stages__heading {
+  padding-block-end: 148px;
+}
+
+.stages__title__postscriptum {
+  position: relative;
+  inset-block-start: 0px;
+  inset-inline-start: 0px;
+  width: 355px;
+  padding-block-start: 12px;
+}
+
+.stages__elements {
+  display: grid;
+  grid-template-columns: repeat(5, 335px);
+  grid-template-rows: repeat(2, min-content);
+  column-gap: 20px;
+  row-gap: 0px;
+  grid-template-areas:
+    "thoroughfare farm palace radiostation airport"
+    "hotels farm garage radiostation airport";
+  list-style-type: none;
+  grid-auto-flow: column;
+  /* overflow-x: hidden; */
+}
+  .elements__item {
+    font-size: clamp(1.125rem, 1.0777rem + 0.2018vw, 1.25rem);
+    padding-block: 28px 34px;
+    padding-inline: 72px 25px;
+  }
+  
+  .thoroughfare {
+    padding-block-start: 62px;
+    padding-block-end: 0px;
+  }
+
+  .farm {
+    padding-block-start: 62px;
+  }
+
+  .palace {
+    padding-block-start: 62px;
+    padding-block-end: 0px;
+  }
+
+  .radiostation {
+    padding-block-start: 62px;
+  }
+
+  .airport {
+    padding-block-start: 62px;
+    padding-inline-end: 20px;
+  }
+
+  .hotels::before {
+    inset-block-start: 60px;
+  }
+
+  .farm::before {
+    inset-block-start: 60px;
+  }
+
+  .palace::before {
+    inset-block-start: 60px;
+  }
+
+  .garage::before {
+    inset-block-start: 60px;
+  }
+
+  .radiostation::before {
+    inset-block-start: 60px;
+  }
+
+  .airport::before {
+    inset-block-start: 60px;
+  }
+
+  .stages__image {
+    width: 100%;
+    position: absolute;
+    inset-inline-start: 0px;
+    inset-block-start: 210px;
+  }
+
 }
