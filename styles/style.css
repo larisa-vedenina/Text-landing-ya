@@ -1,10 +1,12 @@
 .page {
+  min-inline-size: 375px;
+  min-block-size: 100dvb;
+  inline-size: 100vw;
   background-color: var(--bg-color);
   font-family: var(--main-font, sans-serif);
   font-weight: var(--wght-regular, 400);
   background-color: var(--bg-color);
   color: var(--text-color);
-  margin: 0 auto;
   font-size: 20px;
   line-height: 120%;
 }
@@ -15,12 +17,11 @@
   }
 }
 
- .container {
+.container {
   position: relative;
-  max-width: 1222px; 
-  margin: 0 auto;
-  margin-inline: 72px; 
-} 
+  inline-size: clamp(20.9375rem, -0.0404rem + 89.5055vw, 76.375rem);  margin: 0 auto;
+  margin-inline: clamp(1.25rem, 0.0202rem + 5.2472vw, 4.5rem);
+}
 
 .button {
   cursor: pointer;
@@ -48,6 +49,7 @@
   font-family: var(--main-font, sans-serif);
   font-weight: var(--wght-regular, 400);
   color: var(--text-color);
+  line-height: 120%;
 }
 
 /* ------------------------------------ главный экран ------------------------------------ */
@@ -57,31 +59,32 @@
 }
 
 .decoration-zone {
-  width: 100vw;
+  width: 100%;
   position: relative;
-   background: url(/images/bg.png) no-repeat,
-    url(/images/bg-img.png) no-repeat, var(--secondary-bg-color);
-  background-blend-mode: color-burn, normal, normal; 
+  background: url(/images/bg.png) no-repeat, url(/images/bg-img.png) no-repeat,
+    var(--secondary-bg-color);
+  background-blend-mode: color-burn, normal, normal;
   background-size: cover;
-  background-position: top top;
-
+  background-position: center;
 }
 /* конь */
 .decoration-zone::before {
   content: "";
+  display: block;
   position: absolute;
   background: center / contain no-repeat url(../images/knight.png);
-  width: clamp(4.75rem, 3.0555rem + 7.23vw, 9.5625rem);
-  height: clamp(7.5625rem, 4.8776rem + 11.4554vw, 15.1875rem);
+  inline-size: 153px;
+  block-size: 243px;
   transform: rotate(-11deg);
-  inset-inline-end: 360px;
-  inset-block-end: -25px;
+  inset-inline-end: 356px;
+  inset-block-end: -35px;
   z-index: 2;
 }
 
 /* пешка */
 .decoration-zone::after {
   content: "";
+  display: block;
   position: absolute;
   background-image: url(../images/pawn.png);
   width: 82px;
@@ -91,7 +94,7 @@
 }
 
 .header__content-container {
- padding-block: 26px 132px; 
+  padding-block: 26px 129px;
 }
 
 /* ------------------------------------ шапка ------------------------------------ */
@@ -99,18 +102,19 @@
 .header__logo {
   display: flex;
   justify-content: flex-start;
-  gap: 6px;
+  gap: 7px;
   padding-block-end: 62px;
 }
 
 .logo {
-  width: clamp(4.9375rem, 4.63rem + 1.3118vw, 5.75rem);;
+  width: clamp(4.9375rem, 4.63rem + 1.3118vw, 5.75rem);
 }
 
 .header__logo-text {
   font-family: var(--main-font, sans-serif);
   font-weight: var(--wght-bold, 700);
-  font-size: clamp(0.875rem, 0.8277rem + 0.2018vw, 1rem);  line-height: 108%;
+  font-size: clamp(0.875rem, 0.8277rem + 0.2018vw, 1rem);
+  line-height: 108%;
   text-transform: uppercase;
   color: #595653;
 }
@@ -128,7 +132,8 @@
 .cover__title {
   display: flex;
   flex-direction: column;
-  font-size: clamp(2.25rem, 1.6824rem + 2.4218vw, 3.75rem);  line-height: 110%;
+  font-size: clamp(2.25rem, 1.6824rem + 2.4218vw, 3.75rem);
+  line-height: 110%;
   padding-block-end: 24px;
 }
 
@@ -145,7 +150,8 @@
 }
 
 .cover__subheading {
-  font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);  line-height: 130%;
+  font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
+  line-height: 130%;
   text-align: center;
   padding-block-end: 40px;
 }
@@ -216,7 +222,8 @@
 }
 
 .ticker__in .ticker__text {
-  font-size: clamp(1rem, 0.8581rem + 0.6054vw, 1.375rem);  line-height: 110%;
+  font-size: clamp(1rem, 0.8581rem + 0.6054vw, 1.375rem);
+  line-height: 110%;
   text-transform: uppercase;
   color: var(--bg-color);
   padding-block: clamp(0.625rem, 0.4358rem + 0.8073vw, 1.125rem);
@@ -241,16 +248,21 @@
 .main__tournament-description {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;  
   gap: 64px;
-  margin-block-end: 180px;
+  margin-block-end: 187px;
 }
 
 .tournament-description__lecture {
-  display: grid;
-  grid-template-columns: 1fr min-content;
-  grid-template-rows: min-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   gap: 64px;
+}
+
+.tournament-description__lecture__mobile {
+  display: none;
 }
 
 .tournament-description__title {
@@ -258,20 +270,29 @@
   line-height: 135%;
 }
 
+.lecture__title {
+  inline-size: clamp(20.9375rem, 10.8388rem + 43.0878vw, 47.625rem);
+}
+
 .accent-title {
   font-weight: var(--wght-bold, 700);
   color: var(--accent-color);
 }
 
+.lecture__image {
+ inline-size: clamp(20.9375rem, 19.5421rem + 5.9536vw, 24.625rem); 
+}
+
 .tournament-description__session {
   position: relative;
-  display: grid;
-  grid-template-columns: min-content 55%;
-  grid-template-rows: min-content;
-  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .session__image {
+  width: 527px;
   position: relative;
   margin-inline-start: -25px;
   margin-block-start: -30px;
@@ -279,6 +300,7 @@
 
 .session__image-main {
   position: relative;
+  width: 100%;
 }
 
 .session__image-overlay {
@@ -290,8 +312,9 @@
   height: 100%;
 }
 
-.session__content-block__title {
+.session__title {
   padding-block-end: 45px;
+  inline-size: clamp(20.9375rem, 12.2105rem + 37.2351vw, 44rem);
 }
 
 /* ------------------------------------ таблица 1 блока ------------------------------------ */
@@ -308,6 +331,10 @@
 tbody,
 tr {
   display: contents;
+}
+
+.table-column__mobile {
+  display: none;
 }
 
 td {
@@ -502,6 +529,10 @@ td {
   inset-block-end: 0px;
 }
 
+.stages__button-arrows__mobile {
+  display: none;
+}
+
 /* ===================================== таблица 2 блока ===================================== */
 /* ===================================== контент - 2 блок - этапы ===================================== */
 
@@ -533,24 +564,32 @@ td {
 
 .participants__button-arrows {
   display: grid;
-  grid-template-columns: repeat(2, 2.2em);
+  grid-template-columns: repeat(2, 44px);
   grid-template-rows: min-content;
   column-gap: 66px;
 }
 
 .button-arrow {
-  background: no-repeat center url(../svg/svg.svg);
-  width: 2.2em;
-  height: 2.2em;
+  width: 44px;
+  height: 44px;
   display: flex;
   justify-content: center;
   align-content: center;
   cursor: pointer;
-  border: 0;
-  outline: 0;
   background-color: var(--text-color);
   border-radius: 50%;
   transition: background-color 0.3s, transform 0.3s ease-in;
+}
+
+.button-arrow-left {
+  border: 0;
+  outline: 0;
+  background: no-repeat center url(../svg/svg.svg);
+}
+.button-arrow-right {
+  border: 0;
+  outline: 0;
+  background: no-repeat center url(../svg/svgright.svg);
 }
 
 .button-arrow:disabled {
@@ -563,9 +602,6 @@ td {
   transition: background-color 0.5s, transform 0.3s ease-in;
 }
 
-.button-arrow-right {
-  transform: rotate(180deg);
-}
 /* ===================================== кнопки слайдера - 3 блок ===================================== */
 /* ------------------------------------ слайдер - 3 блок ------------------------------------ */
 
@@ -602,9 +638,9 @@ td {
 .carousel-item__about {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  align-items: center;
-  padding-block-end: 20px;
+  gap: 5px;
+  text-align: center;
+  padding-block-end: 19px;
 }
 
 .about-name {
@@ -659,12 +695,8 @@ td {
 
 /* ===================================== футер ===================================== */
 
-
-
-  
 @media (width <= 375px) {
-
-/* ------------------------------------ главный экран ------------------------------------ */
+  /* mobile ------------------------------------ главный экран ------------------------------------ */
 
   .container {
     min-width: 335px;
@@ -672,17 +704,38 @@ td {
   }
 
   .header {
-    margin-block-end: 43px;
+    margin-block-end: 48px;
+  }
+
+  .decoration-zone {
+    background-position: bottom right -25px;
+    background-size: cover, 190%, 100vh;
+ }
+
+  .decoration-zone::before {
+    inline-size: 76px;
+    block-size: 121px;
+    transform: rotate(-11deg);
+    inset-inline-end: 141px;
+    inset-block-end: -14px;
+  }
+
+  .decoration-zone::after {
+    display: none;
   }
 
   .header__content-container {
-  padding-block: 18px 291px; 
+    padding-block: 18px 291px;
+  }
+
+  .header__logo {
+    padding-block-end: 40px;
   }
 
   .header__cover {
-    inline-size: 335px;
+    inline-size: 100%;
   }
-  
+
   .cover__subheading {
     text-align: start;
     padding-block-end: 32px;
@@ -705,94 +758,138 @@ td {
     padding: 0 18px;
   }
 
+  /* mobile ===================================== главный экран ===================================== */
 
-/* ===================================== главный экран ===================================== */
+  /* mobile ------------------------------------ контент - 1 блок - описание турнира ------------------------------------ */
 
-/* ------------------------------------ контент - 1 блок - описание турнира ------------------------------------ */
+  .main__tournament-description {
+    gap: 34px;
+    margin-block-end: 120px;
+  }
 
-.main__tournament-description {
-  gap: 34px;
-  margin-block-end: 120px;
-}
+  .tournament-description__lecture {
+    display: none;
+  }
 
-.tournament-description__lecture {
-  display: grid;
-  grid-template-rows: repeat(2, min-content);
-  grid-template-columns: 335px;
-  align-items: center;
-  gap: 24px;
-}
+  .tournament-description__lecture__mobile {
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    grid-template-columns: 335px;
+    align-items: center;
+    gap: 25px;
+  }
 
-.lecture__image {
-  width: 100%;
-}
+  .tournament-description__session {
+    gap: 24px; 
+  }
 
-.tournament-description__session {
-  grid-template-rows: repeat(2, min-content);
-  grid-template-columns: 335px;
-}
+  .session__image {
+    width: 376px;
+    position: relative;
+    margin-inline: -20px;
+    margin-block: 0px;
+  }
 
-.session__image-main {
-  width: 100%;
-}
+  .session__content-block__title {
+    padding-block-end: 31px;
+  }
 
-.content-block__table {
-  grid-template-columns: 335px;
-  grid-template-rows: repeat(10, min-content);
-  padding-block-end: 40px;
-}
+  .session__title {
+    padding-block-end: 28px;
+  }
 
-td {
-  padding-block: 0;
-}
+  .content-block__table {
+    grid-template-columns: 335px;
+    grid-template-rows: repeat(10, min-content);
+    padding-block-end: 22px;
+  }
 
-.table-column-right {
-  border: 0;
-  padding-block-start: 16px;
-}
+  td {
+    padding-block: 0px;
+  }
 
-.table-column-left {
-  padding-inline-start: 0px;
-  padding-block: 12px 16px;
-}
+  .table-column {
+    display: none;
+  }
 
-/* ===================================== контент - 1 блок - описание турнира ===================================== */
+  .table-column__mobile {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid rgb(208 208 208);
+    padding-block: 15px 16px;
+  }
 
-/* ------------------------------------ контент - 2 блок - этапы ------------------------------------ */
+  .text-bold {
+    font-weight: var(--wght-bold, 600);
+    opacity: 1;
+  }
 
-.stages__heading {
-  padding-block-end: 148px;
-}
+  .table-column-right {
+    border: 0;
+    padding-block-start: 15px;
+  }
 
-.stages__title__postscriptum {
-  position: relative;
-  inset-block-start: 0px;
-  inset-inline-start: 0px;
-  width: 355px;
-  padding-block-start: 12px;
-}
+  .table-column-left {
+    padding-inline-start: 0px;
+    padding-block: 12px 15px;
+  }
 
-.stages__elements {
-  display: grid;
-  grid-template-columns: repeat(5, 335px);
-  grid-template-rows: repeat(2, min-content);
-  column-gap: 20px;
-  row-gap: 0px;
-  grid-template-areas:
-    "thoroughfare farm palace radiostation airport"
-    "hotels farm garage radiostation airport";
-  list-style-type: none;
-  grid-auto-flow: column;
-  /* overflow-x: hidden; */
-}
+  .table-column-right__mobile,
+  .table-column-left__mobile {
+    border: 0;
+  }
+
+  /* mobile ===================================== контент - 1 блок - описание турнира ===================================== */
+
+  /* mobile ------------------------------------ контент - 2 блок - этапы ------------------------------------ */
+
+  .main__stages {
+    margin-block-end: 121px;
+  }
+
+  .stages__heading {
+    padding-block-end: 149px;
+  }
+
+  .stages__title {
+    line-height: 110%;
+    padding-block-end: 13px;
+  }
+
+  .stages__title__postscriptum {
+    position: relative;
+    inset-block-start: 0px;
+    inset-inline-start: 0px;
+    width: 355px;
+  }
+
+  .stages__elements-carousel {
+    overflow-x: scroll; 
+  }
+
+  .stages__elements {
+    display: grid;
+    grid-template-columns: repeat(5, 335px);
+    grid-template-rows: repeat(2, min-content);
+    column-gap: 40px;
+    row-gap: 0px;
+    grid-template-areas:
+      "thoroughfare farm palace radiostation airport"
+      "hotels farm garage radiostation airport";
+    list-style-type: none;
+    grid-auto-flow: column;
+  }
+
   .elements__item {
     font-size: clamp(1.125rem, 1.0777rem + 0.2018vw, 1.25rem);
-    padding-block: 28px 34px;
+    padding-block: 29px 34px;
     padding-inline: 72px 25px;
   }
-  
+
   .thoroughfare {
-    padding-block-start: 62px;
+    padding-block-start: 64px;
     padding-block-end: 0px;
   }
 
@@ -814,16 +911,20 @@ td {
     padding-inline-end: 20px;
   }
 
+  .thoroughfare::before {
+    inset-block-start: 62px;
+  }
+
   .hotels::before {
-    inset-block-start: 60px;
+    inset-block-start: 28px;
   }
 
   .farm::before {
-    inset-block-start: 60px;
+    inset-block-start: 62px;
   }
 
   .palace::before {
-    inset-block-start: 60px;
+    inset-block-start: 62px;
   }
 
   .garage::before {
@@ -831,18 +932,134 @@ td {
   }
 
   .radiostation::before {
-    inset-block-start: 60px;
+    inset-block-start: 62px;
   }
 
   .airport::before {
-    inset-block-start: 60px;
+    inset-block-start: 62px;
   }
 
   .stages__image {
     width: 100%;
     position: absolute;
-    inset-inline-start: 0px;
-    inset-block-start: 210px;
+    inset-inline-start: 9px;
+    inset-block-start: 191px;
+    rotate: -3deg;
   }
 
+
+  /* mobile ------------------------------------ кнопки - 2 блок  ------------------------------------ */
+
+  .stages__button-arrows__mobile {
+    display: grid;
+    grid-template-columns: repeat(2, 36px);
+    grid-template-rows: min-content;
+    column-gap: 66px;
+    padding-inline-start: 103px;
+    padding-block-start: 28px; 
+  }
+
+  .button-arrow__mobile {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s ease-in;
+  }
+
+  .button-arrow-left__mobile {
+    border: 0;
+    outline: 0;
+    background: no-repeat center url(../svg/svg.svg);
+  }
+
+  .button-arrow-right__mobile {
+    border: 0;
+    outline: 0;
+    background: no-repeat center url(../svg/svgright.svg);
+  }
+
+  .button-arrow__mobile:hover {
+    background-color: #fbce51;
+    transition: background-color-left 0.5s, transform 0.3s ease-in;
+  }
+  
+  /* mobile ===================================== контент - 2 блок - этапы ===================================== */
+
+  /* mobile ------------------------------------ контент - 3 блок - участники ------------------------------------ */
+
+  .main__participants {
+    gap: 41px;
+    margin-block-end: 172px;
+  }
+  .participants__heading-title {
+    line-height: 110%;
+  }
+
+  .participants__button-arrows {
+    grid-template-columns: repeat(2, 36px);
+    column-gap: 57px;
+  }
+
+  .button-arrow {
+    width: 36px;
+    height: 36px;
+    position: relative;
+    inset-block-start: 526px;
+    inset-inline-end: 134px;
+  }
+
+  .participants__carousel {
+    overflow-x: scroll;
+  }
+
+  .participants__carousel-content {
+    display: grid;
+    grid-template-columns: repeat(6, 335px);
+    grid-gap: 32px;
+    grid-auto-flow: column;
+  }
+
+  .carousel-item {
+    padding-inline: 20px;
+  }
+
+  .carousel-item__avatar {
+    inline-size: 244px;
+    padding-block-end: 29px;
+  }
+
+  .carousel-item__about {
+    padding-block-end: 19px;
+    gap: 7px;
+  }
+}
+
+@media ( width >= 1920px) {
+
+  .container{
+    inline-size: 1222px;  
+    margin: 0 auto;
+  }
+
+  .decoration-zone {
+    background-position: bottom;
+    background: url(../images/bg.png) no-repeat 50% 50%, url(../images/heading-img-1920.png) 54% 50% no-repeat,
+    var(--secondary-bg-color);
+    background-size: 100vw, 85%, 100vw;
+  }
+
+  .decoration-zone::before {
+    inset-inline-end: 631px;
+    inset-block-end: -37px;
+  }
+
+  .decoration-zone::after {
+    inset-inline-end: 320px;
+    inset-block-end: 20px;
+  }
 }

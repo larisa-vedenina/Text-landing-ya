@@ -53,8 +53,13 @@
       <div class="main__content-container container">
         <section class="main__tournament-description">
           <div class="tournament-description__lecture">
-            <h3 class="tournament-description__title title">чтобы поддержать Международный васюкинский турнир посетите лекцию на тему: <span class="accent-title"> «Плодотворная дебютная идея»</span></h3>
+            <h3 class="tournament-description__title lecture__title title">чтобы поддержать Международный васюкинский турнир посетите лекцию на тему: <span class="accent-title"> «Плодотворная дебютная идея»</span></h3>
             <img class="lecture__image" src="./images/img-2-section.png" alt="chess players"/>
+          </div>
+          <div class="tournament-description__lecture__mobile">
+            <h3 class="tournament-description__title lecture__title title">чтобы поддержать Международный васюкинский турнир</h3>
+            <img class="lecture__image" src="./images/img-2-section.png" alt="chess players"/>
+            <h3 class="tournament-description__title lecture__title title">посетите лекцию на тему: <span class="accent-title"> «Плодотворная дебютная идея»</span></h3>
           </div>
           <div class="tournament-description__session">
             <div class="session__image">
@@ -62,7 +67,7 @@
               <img class="session__image-overlay" src="./images/img-2-section-2-over.png" alt="overlay"/>
             </div>
             <div class="session__content-block">
-              <h3 class="tournament-description__title session__content-block__title  title">и сеанс <span class="accent-title">одновременной игры в&nbsp;шахматы на&nbsp;160 досках</span> гроссмейстера О.&nbsp;Бендера</h3>
+              <h3 class="tournament-description__title session__title title">и сеанс <span class="accent-title">одновременной игры в&nbsp;шахматы на&nbsp;160 досках</span> гроссмейстера О.&nbsp;Бендера</h3>
               <table class="content-block__table">
                 <tbody>
                   <tr>
@@ -77,10 +82,13 @@
                     <td class="table-column-right text">Стоимость входных билетов:</td>
                     <td class="table-column-left text">20 коп.</td>
                   </tr>
-                  <tr>
+                  <tr class="table-column">
                     <td class="table-column-right text">Плата за игру:</td>
                     <td class="table-column-left text">50 коп.</td>
                   </tr>
+                  <tr class="table-column__mobile">
+                    <td class="table-column-right__mobile text">Плата за игру:</td>
+                    <td class="table-column-left__mobile text-bold text">50 коп.</td>                  </tr>
                   <tr>
                     <td class="table-column-right text">Взнос на телеграммы:</td>
                     <td class="table-column-left text"><span class="table-text-decoration">100 руб.</span> 21 руб. 16 коп.</td>
@@ -96,26 +104,36 @@
               <h2 class="stages__title title">Этапы преображения Васюков</h2>
               <p class="postscriptum stages__title__postscriptum text">Будущие источники обогащения васюкинцев</p>
             </div>
-            <ul class="stages__elements">
-              <li class="elements__item thoroughfare text">Строительство железнодорожной магистрали Москва-Васюки</li>
-              <li class="elements__item hotels text">Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов</li>
-              <li class="elements__item farm text">Поднятие сельского хозяйства в радиусе <br/> на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет</li>
-              <li class="elements__item palace text">Строительство дворца <br/> для турнира</li>
-              <li class="elements__item garage text">Размещение гаражей для гостевого автотранспорта</li>
-              <li class="elements__item radiostation text">Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов</li>
-              <li class="elements__item airport text">Создание аэропорта &laquo;Большие Васюки&raquo; с&nbsp;регулярным отправлением почтовых самолётов и&nbsp;дирижаблей во&nbsp;все концы света, включая Лос-Анжелос и&nbsp;Мельбурн</li>
-            </ul>
+            <div class="stages__elements-carousel" id="carouselM">
+              <ul class="stages__elements" id="contentM">
+                <li class="elements__item thoroughfare text">Строительство железнодорожной магистрали Москва-Васюки</li>
+                <li class="elements__item hotels text">Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов</li>
+                <li class="elements__item farm text">Поднятие сельского хозяйства в радиусе <br/> на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет</li>
+                <li class="elements__item palace text">Строительство дворца <br/> для турнира</li>
+                <li class="elements__item garage text">Размещение гаражей для гостевого автотранспорта</li>
+                <li class="elements__item radiostation text">Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов</li>
+                <li class="elements__item airport text">Создание аэропорта &laquo;Большие Васюки&raquo; с&nbsp;регулярным отправлением почтовых самолётов и&nbsp;дирижаблей во&nbsp;все концы света, включая Лос-Анжелос и&nbsp;Мельбурн</li>
+              </ul>
+            </div>
             <img class="stages__image" src="./images/img-3-section.png" alt="airplane"/>
+            <div class="stages__button-arrows__mobile">
+              <div class="button-arrow__mobile" id="prevM">                
+                <button class="button-arrow-left__mobile button" type="button"></button>
+              </div>
+              <div class="button-arrow__mobile" id="nextM" >
+                <button class="button-arrow-right__mobile button" type="button" id="arrowM"></button>
+              </div>
+            </div> 
         </section>
         <section class="main__participants" id="wrapper">  
               <div class="participants__heading">
                 <h2 class="participants__heading-title title">Участники турнира</h2>
                 <div class="participants__button-arrows">
-                  <div class="button-arrow-left" id="prev">                
-                    <button class="button-arrow button" type="button"></button>
+                  <div class="button-arrow" id="prev">                
+                    <button class="button-arrow-left button" type="button"></button>
                   </div>
-                  <div class="button-arrow-right" id="next">
-                    <button class="button-arrow button" type="button" id="arrow"></button>
+                  <div class="button-arrow" id="next">
+                    <button class="button-arrow-right button" type="button" id="arrow"></button>
                   </div>
                 </div> 
               </div>
@@ -192,7 +210,7 @@
     </main>
     <footer class="footer">
       <div class="footer__content-container container">
-        <p class="footer__text text">Все персонажи, события и цитаты являются вымышленными и не принадлежат создателям сайта. С подробностями можно познакомиться в главе XXXIV романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».</p>
+        <p class="footer__text text">Все персонажи, события и&nbsp;цитаты являются вымышленными и&nbsp;не&nbsp;принадлежат создателям сайта. С&nbsp;подробностями можно познакомиться в&nbsp;главе XXXIV романа Ильи Ильфа и&nbsp;Евгения Петрова &laquo;Двенадцать стульев&raquo;.</p>
       </div>
     </footer>
 

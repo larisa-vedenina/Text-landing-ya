@@ -1,28 +1,3 @@
-// const arrowLeft = document.querySelector(".button-arrow-left"),
-//     arrowRight = document.querySelector(".button-arrow-right"),
-//     sliderList = document.querySelectorAll(".participants__slider-list"),
-//     left = 200,
-//     itemWidth = 394;
-
-// slideTo = (direction) => {
-//     if(direction == "left") {
-//         left = left - itemWidth;
-//     }
-//     if(direction == "right") left += itemWidth;
-
-//     if(left < -1400) left = 0;
-//     if(left > 0) left = -1400;
-//     sliderList.style.left = left + "px";
-// }
-
-// arrowLeft.addEventListener("click", () => {
-//     slideTo("left");
-// });
-
-// arrowRight.addEventListener("click", () => {
-//     slideTo("right");
-// });
-
 const gap = 20;
 
 const carousel = document.getElementById("carousel"),
@@ -32,18 +7,38 @@ const carousel = document.getElementById("carousel"),
   arrow = document.getElementById("arrow");
 
 next.addEventListener("click", e => {
-  carousel.scrollBy(395 + gap, 0);
-//   if (carousel.scrollWidth !== 0) {
-//     prev.style.display = "flex";
-//   }
+carousel.scrollBy(395 + gap, 0);
 });
 
 prev.addEventListener("click", e => {
-  carousel.scrollBy(-(395 + gap), 0);
-//   if (carousel.scrollLeft - width - gap <= 0) {
-//     prev.style.display = "flex";
-//   }
+carousel.scrollBy(-(395 + gap), 0);
 });
 
 let width = carousel.offsetWidth;
 window.addEventListener("resize", e => (width = carousel.offsetWidth));
+
+
+const carouselM = document.getElementById("carouselM"),
+  contentM = document.getElementById("contentM"),
+  nextM = document.getElementById("nextM"),
+  prevM = document.getElementById("prevM"),
+  arrowM = document.getElementById("arrowM");
+
+nextM.addEventListener("click", e => {
+carouselM.scrollBy(355 + gap, 0);
+});
+
+prevM.addEventListener("click", e => {
+carouselM.scrollBy(-(355 + gap), 0);
+});
+
+let widthM = carouselM.offsetWidth;
+window.addEventListener("resize", e => (widthM = carouselM.offsetWidth));
+
+
+
+
+
+
+
+
