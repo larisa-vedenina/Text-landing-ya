@@ -59,11 +59,12 @@
 .decoration-zone {
   width: 100%;
   position: relative;
-  background: url(../images/bg.png) no-repeat, url(../images/bg-img.png) no-repeat,
+  background: url(../images/bg.png), url(../images/bg-img.png),
     var(--secondary-bg-color);
   background-blend-mode: color-burn, normal, normal;
   background-size: cover, 100%, cover;
   background-position: center, 50% 0%, center;
+  background-repeat: no-repeat;
 }
 
 /* конь */
@@ -944,7 +945,7 @@ td {
     position: absolute;
     inset-inline-start: 9px;
     inset-block-start: 191px;
-    transform: rotate(-4deg);  
+    transform: rotate(-4deg);
   }
 
   /* mobile ------------------------------------ кнопки - 2 блок  ------------------------------------ */
@@ -984,7 +985,7 @@ td {
 
   .button-arrow__mobile:hover {
     background-color: #fbce51;
-  
+
     transition: background-color-left 0.5s, transform 0.3s ease-in;
   }
 
