@@ -59,7 +59,7 @@
 .decoration-zone {
   width: 100%;
   position: relative;
-  background: url(/images/bg.png) no-repeat, url(/images/bg-img.png) no-repeat,
+  background: url(../images/bg.png) no-repeat, url(../images/bg-img.png) no-repeat,
     var(--secondary-bg-color);
   background-blend-mode: color-burn, normal, normal;
   background-size: cover, 100%, cover;
