@@ -19,7 +19,8 @@
 
 .container {
   position: relative;
-  inline-size: clamp(20.9375rem, -0.0404rem + 89.5055vw, 76.375rem);  margin: 0 auto;
+  inline-size: clamp(20.9375rem, -0.0404rem + 89.5055vw, 76.375rem);
+  margin: 0 auto;
   margin-inline: clamp(1.25rem, 0.0202rem + 5.2472vw, 4.5rem);
 }
 
@@ -64,9 +65,10 @@
   background: url(/images/bg.png) no-repeat, url(/images/bg-img.png) no-repeat,
     var(--secondary-bg-color);
   background-blend-mode: color-burn, normal, normal;
-  background-size: cover;
-  background-position: center;
+  background-size: cover, 100%, cover;
+  background-position: center, 50% 0%, center;
 }
+
 /* конь */
 .decoration-zone::before {
   content: "";
@@ -76,8 +78,8 @@
   inline-size: 153px;
   block-size: 243px;
   transform: rotate(-11deg);
-  inset-inline-end: 356px;
-  inset-block-end: -35px;
+  inset-inline-end: 357px;
+  inset-block-end: 25px;
   z-index: 2;
 }
 
@@ -90,7 +92,7 @@
   width: 82px;
   height: 122px;
   inset-inline-end: 45px;
-  inset-block-end: 20px;
+  inset-block-end: 78px;
 }
 
 .header__content-container {
@@ -184,7 +186,7 @@
   background-color: #fbce51;
   color: var(--main-button-color);
   border: 0;
-  transform: scale(105%);
+
   transition: background-color 1s, transform 1s ease-in;
 }
 
@@ -198,7 +200,7 @@
   background-color: var(--main-button-color);
   color: var(--bg-color);
   border: 0;
-  transform: scale(105%);
+
   transition: background-color 1s, transform 1s ease-in;
 }
 
@@ -248,7 +250,7 @@
 .main__tournament-description {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;  
+  justify-content: space-between;
   gap: 64px;
   margin-block-end: 187px;
 }
@@ -280,7 +282,7 @@
 }
 
 .lecture__image {
- inline-size: clamp(20.9375rem, 19.5421rem + 5.9536vw, 24.625rem); 
+  inline-size: clamp(20.9375rem, 19.5421rem + 5.9536vw, 24.625rem);
 }
 
 .tournament-description__session {
@@ -394,7 +396,7 @@ td {
 
 .stages__elements {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 394px);
   grid-template-rows: 112px 112px 136px;
   gap: 20px;
   grid-template-areas:
@@ -598,7 +600,7 @@ td {
 
 .button-arrow:hover {
   background-color: #fbce51;
-  transform: scale(105%);
+
   transition: background-color 0.5s, transform 0.3s ease-in;
 }
 
@@ -670,7 +672,7 @@ td {
 .carousel__button-more:hover {
   background-color: var(--secondary-accent-color);
   color: var(--bg-color);
-  transform: scale(105%);
+
   transition: background-color 0.5s, transform 0.2s ease-in;
 }
 
@@ -708,16 +710,15 @@ td {
   }
 
   .decoration-zone {
-    background-position: bottom right -25px;
-    background-size: cover, 190%, 100vh;
- }
+    background-position: center, bottom 35px right -36px, center;
+    background-size: cover, 203%, cover;
+  }
 
   .decoration-zone::before {
     inline-size: 76px;
     block-size: 121px;
-    transform: rotate(-11deg);
     inset-inline-end: 141px;
-    inset-block-end: -14px;
+    inset-block-end: 23px;
   }
 
   .decoration-zone::after {
@@ -780,7 +781,7 @@ td {
   }
 
   .tournament-description__session {
-    gap: 24px; 
+    gap: 24px;
   }
 
   .session__image {
@@ -866,7 +867,9 @@ td {
   }
 
   .stages__elements-carousel {
-    overflow-x: scroll; 
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
   }
 
   .stages__elements {
@@ -944,9 +947,8 @@ td {
     position: absolute;
     inset-inline-start: 9px;
     inset-block-start: 191px;
-    rotate: -3deg;
+    transform: rotate(-4deg);  
   }
-
 
   /* mobile ------------------------------------ кнопки - 2 блок  ------------------------------------ */
 
@@ -956,7 +958,7 @@ td {
     grid-template-rows: min-content;
     column-gap: 66px;
     padding-inline-start: 103px;
-    padding-block-start: 28px; 
+    padding-block-start: 28px;
   }
 
   .button-arrow__mobile {
@@ -985,9 +987,10 @@ td {
 
   .button-arrow__mobile:hover {
     background-color: #fbce51;
+  
     transition: background-color-left 0.5s, transform 0.3s ease-in;
   }
-  
+
   /* mobile ===================================== контент - 2 блок - этапы ===================================== */
 
   /* mobile ------------------------------------ контент - 3 блок - участники ------------------------------------ */
@@ -1039,27 +1042,27 @@ td {
   }
 }
 
-@media ( width >= 1920px) {
-
-  .container{
-    inline-size: 1222px;  
+@media (width >= 1920px) {
+  .container {
+    inline-size: 1222px;
     margin: 0 auto;
   }
 
   .decoration-zone {
     background-position: bottom;
-    background: url(../images/bg.png) no-repeat 50% 50%, url(../images/heading-img-1920.png) 54% 50% no-repeat,
-    var(--secondary-bg-color);
-    background-size: 100vw, 85%, 100vw;
+    background: url(../images/bg.png) no-repeat 50% 50%,
+      url(../images/heading-img-1920.png) 54% 7% no-repeat,
+      var(--secondary-bg-color);
+    background-size: cover, 85%, cover;
   }
 
   .decoration-zone::before {
     inset-inline-end: 631px;
-    inset-block-end: -37px;
+    inset-block-end: 25px;
   }
 
   .decoration-zone::after {
     inset-inline-end: 320px;
-    inset-block-end: 20px;
+    inset-block-end: 80px;
   }
 }
