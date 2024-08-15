@@ -573,7 +573,6 @@ td {
   height: 44px;
   display: flex;
   justify-content: center;
-  align-content: center;
   cursor: pointer;
   background-color: var(--text-color);
   border-radius: 50%;
@@ -584,11 +583,13 @@ td {
   border: 0;
   outline: 0;
   background: no-repeat center url(../svg/svg.svg);
+  background-position: 22% 50%;
 }
 .button-arrow-right {
   border: 0;
   outline: 0;
   background: no-repeat center url(../svg/svgright.svg);
+  background-position: 50% 50%;
 }
 
 .button-arrow:disabled {
