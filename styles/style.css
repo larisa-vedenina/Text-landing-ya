@@ -1,7 +1,4 @@
 .page {
-  min-inline-size: 375px;
-  min-block-size: 100dvb;
-  inline-size: 100vw;
   background-color: var(--bg-color);
   font-family: var(--main-font, sans-serif);
   font-weight: var(--wght-regular, 400);
