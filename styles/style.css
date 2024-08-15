@@ -409,8 +409,8 @@ td {
   position: relative;
   width: 100%;
   height: 100%;
-  background: url(../images/img-2-section-2-over.png),
-    url(../images/img-2-section-2.png);
+  background: url(../images/bg-stages-section-3.png),
+    url(../images/overlay-stages-section-3.png);
   background-blend-mode: color-burn, normal;
   padding-block-start: 20px;
   padding-inline: 72px 20px;
